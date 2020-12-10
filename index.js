@@ -46,7 +46,7 @@ function doRequest() {
 
 //增加阅读量
 function doAddView() {
-    let url='https://wushustars.com/contestants/ta1-m6-alan-han/'
+    let url='https://wushustars.com/contestants/ta1-m2-malcom-mak-zi-qian/'
     let userAgent = userAgents[parseInt(Math.random() * userAgents.length)]
     request('get', url)
         .set(
