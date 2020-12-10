@@ -66,4 +66,4 @@ function doAddView() {
 
 
 // setInterval(doRequest, 1000)
-setInterval(doAddView, 40)
+setInterval(doAddView, 50)
