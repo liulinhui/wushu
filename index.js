@@ -44,5 +44,26 @@ function doRequest() {
         })
 }
 
+//增加阅读量
+function doAddView() {
+    let userAgent = userAgents[parseInt(Math.random() * userAgents.length)]
+    request('get', 'https://wushustars.com/contestants/ta1-m6-alan-han/')
+        .set(
+            {
+                'User-Agent': userAgent,
+                'cookie': 'PHPSESSID=0fa93ef0b3c834e87564a8ff738e4798; wp_woocommerce_session_941c96b22b2956bcef27c1c31efcc4a4=8687e81ec0c8a783e9e66d7541df8cb3%7C%7C1607784791%7C%7C1607781191%7C%7C5da2178c8a77804bc9096c093e6e543b; _fbp=fb.1.1607611993887.788961286; mailchimp_landing_site=https%3A%2F%2Fwushustars.com%2Fwp-admin%2Fadmin-ajax.php%3Fcallback%3DjQuery35104210935362107804_1607611993477%26action%3Dow_save_votes%26pid%3Dpg4S1tKsTHIHHHGuEf3SBIPQytF4tY9yOWYjnSC3GL7KDOmvGWeRi1U7M74g%252F5exBGBqdIrlEcDpbf%252FKilXkIw%253D%253D%26termid%3DbJxVHh7LdWygpQnFcR%252FlOrmfmpiLhJn3cj%252BtjXgAxLG6FTNCliUVsRJfiG5RHWwRtwPFpcYknZvE6WaudliltQ%253D%253D%26current_time%3DThu%252C%252010%2520Dec%25202020%252014%253A53%253A18%2520GMT%26gmt_offset%3D-480%26votes_count%3D1%26ow_buy_class%3D0%26_%3D1607611993478',
+                'referer': 'https://wushustars.com/contestants/ta1-m6-alan-han/',
+                'sec-fetch-des': 'empty',
+                'sec-fetch-mode': 'cors',
+                'sec-fetch-site': 'same-origin',
+                'x-requested-with': 'XMLHttpRequest'
+            }
+        )
+        .end((err, res) => {
+            if (!err)console.log('添加成功')
+        })
+}
 
-setInterval(doRequest, 1000)
+
+// setInterval(doRequest, 1000)
+setInterval(doAddView, 15)
